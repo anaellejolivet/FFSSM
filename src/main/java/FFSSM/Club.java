@@ -80,5 +80,5 @@ public class Club {
     public String toString() {
         return "Club{" + "président=" + president + ", nom=" + nom + ", adresse=" + adresse + ", telephone=" + telephone + '}';
     }
-
+    
 }

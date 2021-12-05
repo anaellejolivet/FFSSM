@@ -28,9 +28,9 @@ public class Moniteur extends Plongeur {
         Optional<Club> o = Optional.empty();
         if (lesEmbauches.size() > 0) {
             Embauche e = lesEmbauches.get(lesEmbauches.size() - 1);
-            if (!e.estTerminee()) {
-                o = Optional.of(e.getEmployeur());
-            }
+            if (e.estTerminee()) {
+                o = Optional.empty();
+            }else o = Optional.of(e.getEmployeur());
         }
         return o;
     }
@@ -47,11 +47,11 @@ public class Moniteur extends Plongeur {
     }
 
     public void terminerEmbauche(LocalDate fin) {
-        this.lesEmbauches.get(lesEmbauches.size()-1).terminer(fin);
+        lesEmbauches.get(lesEmbauches.size()-1).terminer(fin);
     }
 
     public List<Embauche> emplois() {
         return lesEmbauches;
     }
-
+    
 }
